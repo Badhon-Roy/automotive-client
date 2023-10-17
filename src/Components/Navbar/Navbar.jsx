@@ -15,7 +15,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                        isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                     }
                                 >
                                     Home
@@ -25,7 +25,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/addProduct"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                        isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                     }
                                 >
                                     Add Product
@@ -35,7 +35,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/myCart"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                        isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                     }
                                 >
                                     My Cart
@@ -43,7 +43,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <img className="w-2/5" src="https://quattro.true-emotions.studio/wp-content/themes/quattro/images/logo.svg" alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className=" gap-10 menu-horizontal px-1">
@@ -51,7 +51,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                    isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                 }
                             >
                                 Home
@@ -61,7 +61,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/addProduct"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                    isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                 }
                             >
                                 Add Product
@@ -71,7 +71,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/myCart"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                    isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                 }
                             >
                                 My Cart
@@ -85,7 +85,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/login"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : "bg-blue-500"
+                                    isPending ? "pending" : isActive ? "bg-blue-500 px-3 py-1 rounded" : ""
                                 }
                             >
                                 Login

@@ -11,6 +11,7 @@ import MyCart from './Pages/MyCart/MyCart';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import MainLayout from './Layout/MainLayout';
+import ShowCars from './Components/ShowCars/ShowCars';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path : '/register',
         element : <Register></Register>
+      },
+      {
+        path : '/showCars/:brand',
+        element : <ShowCars></ShowCars>,
+        loader : ({params}) => fetch(`http://localhost:5000/brands/${params.brand}`)
       }
     ]
   },
