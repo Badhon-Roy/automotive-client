@@ -13,10 +13,12 @@ import Register from './Pages/Register/Register';
 import MainLayout from './Layout/MainLayout';
 import ShowCars from './Components/ShowCars/ShowCars';
 import CarDetails from './Components/CarDetails/CarDetails';
+import ErrorPage from './ErrorPage/ErrorPage';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement : <ErrorPage></ErrorPage>,
     children : [
       {
         path : '/',
