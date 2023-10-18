@@ -4,13 +4,27 @@ import { useParams } from "react-router-dom";
 const CarDetails = () => {
     const {id} = useParams()
     const [cars, setCars] = useState({})
-    const { name, price, image , brand , type ,description, rating} = cars;
+    const {_id , name, price, image , brand , type ,description, rating} = cars;
     useEffect(() => {
         fetch(`http://localhost:5000/showCar/${id}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [id])
-    
+    const handleAddCart = id =>{
+        const cartsData = {email:'roy@gmail.com' , carId:id}
+        fetch(`http://localhost:5000/myCarts`,{
+            method : "POST",
+            headers : {
+                'Content-Type' : "application/json"
+            },
+            body : JSON.stringify(cartsData)
+
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+        })
+    }
     return (
         <div>
             <img className="w-full md:h-[70vh] mt-2" src={image} alt="" />
@@ -21,7 +35,7 @@ const CarDetails = () => {
             <p> Rating : {rating}</p>
             <p className="text-[18px] my-4">{description}</p>
             <div className="flex justify-end">
-                <button className="btn bg-blue-500 hover:bg-blue-700">Add to Cart</button>
+                <button onClick={()=>handleAddCart(_id)} className="btn bg-blue-500 hover:bg-blue-700">Add to Cart</button>
             </div>
         </div>
     );
