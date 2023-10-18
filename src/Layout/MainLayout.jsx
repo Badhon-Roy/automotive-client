@@ -6,7 +6,6 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 
 const MainLayout = () => {
     const navigation = useNavigation()
-    console.log(navigation);
     return (
         <div>
             <Navbar></Navbar>

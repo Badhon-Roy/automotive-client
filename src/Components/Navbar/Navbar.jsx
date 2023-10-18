@@ -6,7 +6,6 @@ import swal from "sweetalert";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
-    console.log(user);
     const handleSignOut = () => {
         swal({
             title: "Are you sure you want to log out?",

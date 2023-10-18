@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const CarDetails = () => {
+    const {user} =  useContext(AuthContext)
     const {id} = useParams()
     const [cars, setCars] = useState({})
     const {_id , name, price, image , brand , type ,description, rating} = cars;
@@ -11,7 +13,7 @@ const CarDetails = () => {
             .then(data => setCars(data))
     }, [id])
     const handleAddCart = id =>{
-        const cartsData = {email:'roy@gmail.com' , carId:id}
+        const cartsData = {email:user.email , carId : id}
         fetch(`http://localhost:5000/myCarts`,{
             method : "POST",
             headers : {
