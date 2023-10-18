@@ -15,17 +15,19 @@ const MyCart = () => {
             .then(data => {
                 setMyCarts(data);
             })
-    }, [])
+    }, [myCarts])
     const filterCarts = myCarts.filter(cart => cart.email === email)
 
     return (
         <div>
-            <h2>My Carts : {filterCarts.length}</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <h2 className="text-center text-4xl mt-16 mb-8 font-bold">My Carts : {filterCarts.length}</h2>
+            {
+                filterCarts.length>0 ? <div>
                 {
                     filterCarts.map(cart => <Cart key={cart._id} cart={cart} ></Cart>)
                 }
-            </div>
+            </div> : <p className="text-4xl text-center my-16">no cart added</p>
+            }
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 const CarDetails = () => {
     const {user} =  useContext(AuthContext)
@@ -24,6 +26,15 @@ const CarDetails = () => {
         })
         .then(res => res.json())
         .then(data =>{
+            if(data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Added cart successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
             console.log(data);
         })
     }
