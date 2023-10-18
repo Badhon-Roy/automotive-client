@@ -1,13 +1,15 @@
 import Banner from "../../Components/Banner/Banner";
 import { Link } from "react-router-dom";
+import About from "./About";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <div>
-                <h2 className="text-center text-4xl mt-16 mb-8">Popular Brand</h2>
-                <div className="grid md:grid-cols-3 gap-5">
+                <h2 className="text-center text-4xl mt-16 mb-8 font-bold">Popular <span className="text-blue-600">Brand</span></h2>
+                <div className="grid md:grid-cols-3 gap-5 mb-16">
                     <Link to={`showCars/toyota`}>
                         <div className="bg-base-100 shadow-xl">
                             <figure><img className="w-full h-[250px]" src="https://content.presspage.com/uploads/1523/1920_bvi-16x9-kv.jpg?10000" alt="" /></figure>
@@ -58,6 +60,8 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
+            <About></About>
+            <Testimonial></Testimonial>
         </div>
     );
 };
