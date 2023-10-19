@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
+import "./Cart.css"
 
 const Cart = ({ cart }) => {
     const mainId = cart._id;
@@ -9,7 +11,7 @@ const Cart = ({ cart }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://automotive-server-pi.vercel.app/allCars')
+        fetch('https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/allCars')
             .then((res) => res.json())
             .then((data) => {
                 setMyCart(data);
@@ -46,7 +48,7 @@ const Cart = ({ cart }) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://automotive-server-pi.vercel.app/myCarts/${id}`,{
+                fetch(`https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/myCarts/${id}`,{
                     method : "DELETE"
                 })
                 .then(res => res.json())
@@ -72,14 +74,27 @@ const Cart = ({ cart }) => {
                 <img className="object-cover w-full flex-1 rounded-t-lg h-96 md:h-[350px] md:w-2/5 md:rounded-none md:rounded-l-lg" src={image} alt="" />
                 <div className="flex text-white flex-1 flex-col justify-between p-4 leading-normal">
                     <h2 className="text-2xl font-bold">{name}</h2>
-                    <div className="flex justify-between gap-4 px-8">
+                    <div className="md:flex justify-between gap-4 px-8">
                         <div>
                             <p className="text-xl">Brand : {brand}</p>
                             <p className="text-xl">Type : {type}</p>
                         </div>
                         <div>
                             <p className="text-xl">Price : ${price}</p>
-                            <p> Rating : {rating}</p>
+                            <div className="flex">
+                               
+                                {Array.from({ length: 5 }, (_, i) => {
+                                    const starValue = i + 1;
+                                    return (
+                                        <span
+                                            key={starValue}
+                                            className={`star ${starValue <= rating ? 'active' : ''}`}
+                                        >
+                                            <FaStar></FaStar>
+                                        </span>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                     <p className="my-2">{description}</p>

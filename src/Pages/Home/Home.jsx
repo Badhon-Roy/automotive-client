@@ -11,7 +11,7 @@ import AOS from 'aos';
 const Home = () => {
     const [brands, setBrands] = useState([])
     useEffect(() => {
-        fetch('https://automotive-server-pi.vercel.app/allBrands')
+        fetch('https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/allBrands')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])

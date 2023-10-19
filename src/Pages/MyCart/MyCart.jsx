@@ -10,7 +10,7 @@ const MyCart = () => {
     const [myCarts, setMyCarts] = useState([])
     const email = user.email
     useEffect(() => {
-        fetch('https://automotive-server-pi.vercel.app/myCarts')
+        fetch('https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/myCarts')
             .then(res => res.json())
             .then(data => {
                 setMyCarts(data);
@@ -19,7 +19,7 @@ const MyCart = () => {
     const filterCarts = myCarts.filter(cart => cart.email === email)
 
     return (
-        <div>
+        <div className="md:px-0 px-4">
             <h2 className="text-center text-4xl mt-16 mb-8 font-bold">My Carts : {filterCarts.length}</h2>
             {
                 filterCarts.length>0 ? <div>

@@ -6,8 +6,8 @@ const ShowCar = ({ car }) => {
 
     return (
         <div>
-            <div className="card bg-base-100 shadow-xl">
-                <figure><img className="w-full md:h-[250px] h-[200px]" src={image} alt="Shoes" /></figure>
+            <div className="card bg-base-100 shadow-xl md:px-0">
+                <figure><img className="w-full md:h-[250px] h-[200px]" src={image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <div className="flex justify-between items-center gap-5">

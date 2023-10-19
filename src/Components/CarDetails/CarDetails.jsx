@@ -10,13 +10,13 @@ const CarDetails = () => {
     const [cars, setCars] = useState({})
     const {_id , name, price, image , brand , type ,description, rating} = cars;
     useEffect(() => {
-        fetch(`https://automotive-server-pi.vercel.app/showCar/${id}`)
+        fetch(`https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/showCar/${id}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [id])
     const handleAddCart = id =>{
         const cartsData = {email:user.email , carId : id}
-        fetch(`https://automotive-server-pi.vercel.app/myCarts`,{
+        fetch(`https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/myCarts`,{
             method : "POST",
             headers : {
                 'Content-Type' : "application/json"
@@ -39,7 +39,7 @@ const CarDetails = () => {
         })
     }
     return (
-        <div>
+        <div className="md:px-0 px-4">
             <img className="w-full md:h-[70vh] mt-2" src={image} alt="" />
             <h2 className="text-4xl font-bold my-4">{name}</h2>
             <p className="text-2xl">Brand : <span className="text-blue-500">{brand}</span></p>

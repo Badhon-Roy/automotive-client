@@ -89,7 +89,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <img className="w-2/5" src="https://quattro.true-emotions.studio/wp-content/themes/quattro/images/logo.svg" alt="" />
+                    <img className="md:w-2/5 w-2/4" src="https://quattro.true-emotions.studio/wp-content/themes/quattro/images/logo.svg" alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className=" gap-10 menu-horizontal px-1">
