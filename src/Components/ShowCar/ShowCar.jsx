@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
-
-import ReactStars from "react-rating-stars-component";
-import Rating from "react-rating";
+import { FaStar } from "react-icons/fa"
+import "./ShowCar.css"
 const ShowCar = ({ car }) => {
     const { _id, name, price, image, brand, type, rating } = car;
-    // const roundedRating = Math.round(rating * 2) / 2;
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-    };
+
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -19,15 +15,21 @@ const ShowCar = ({ car }) => {
                             <h4 className="text-xl">Brand : {brand}</h4>
                             <p className="text-xl">Type : {type}</p>
                         </div>
-                        <div>
+                        <div className="mb-3">
                             <p className="text-xl">Price: ${price}</p>
-                            <div>
-                                <Rating
-                                    placeholderRating={3.5}
-                                    emptySymbol={<img src="assets/images/star-grey.png" className="icon" />}
-                                    placeholderSymbol={<img src="assets/images/star-red.png" className="icon" />}
-                                    fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
-                                />
+                            <div className="flex">
+                               
+                                {Array.from({ length: 5 }, (_, i) => {
+                                    const starValue = i + 1;
+                                    return (
+                                        <span
+                                            key={starValue}
+                                            className={`star ${starValue <= rating ? 'active' : ''}`}
+                                        >
+                                            <FaStar></FaStar>
+                                        </span>
+                                    );
+                                })}
                             </div>
                         </div>
 

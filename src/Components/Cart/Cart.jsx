@@ -84,7 +84,7 @@ const Cart = ({ cart }) => {
                     </div>
                     <p className="my-2">{description}</p>
                     <div className="flex justify-end pr-5">
-                        <button onClick={()=>handleDelete(mainId)} className="btn bg-blue-500 hover:bg-blue-700">Delete Cart</button>
+                        <button onClick={()=>handleDelete(mainId)} className="btn bg-blue-500 hover:bg-blue-700 text-white">Delete Cart</button>
                     </div>
                 </div>
             </a>

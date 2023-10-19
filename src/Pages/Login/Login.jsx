@@ -13,8 +13,9 @@ const Login = () => {
     const { googleSignIn, signIn } = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault()
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
         signIn(email, password)
             .then(res => {
                 console.log(res.user);

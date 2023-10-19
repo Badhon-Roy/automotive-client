@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
@@ -27,7 +28,13 @@ const UpdateProduct = () => {
         .then(data =>{
             console.log(data);
             if(data.modifiedCount>0){
-                alert("update successfully")
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Update product successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                 form.reset();
             }
         })
@@ -80,7 +87,7 @@ const UpdateProduct = () => {
                     <input type="text" name="image" className="w-full mt-2 py-1 px-4 rounded" placeholder="image" defaultValue={image} id="" />
                 </div>
                 <div className="flex justify-center"> 
-                    <button className="btn bg-purple-500 hover:bg-purple-600 my-5">
+                    <button className="btn text-white bg-purple-500 hover:bg-purple-600 my-5">
                         Update Product
                     </button>
                 </div>

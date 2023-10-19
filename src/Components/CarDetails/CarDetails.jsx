@@ -48,7 +48,7 @@ const CarDetails = () => {
             <p> Rating : {rating}</p>
             <p className="text-[18px] my-4">{description}</p>
             <div className="flex justify-end">
-                <button onClick={()=>handleAddCart(_id)} className="btn bg-blue-500 hover:bg-blue-700">Add to Cart</button>
+                <button onClick={()=>handleAddCart(_id)} className="btn bg-blue-500 text-white hover:bg-blue-700">Add to Cart</button>
             </div>
         </div>
     );
