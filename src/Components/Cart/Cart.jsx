@@ -11,7 +11,7 @@ const Cart = ({ cart }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/allCars')
+        fetch('https://automotive-server-production.up.railway.app/allCars')
             .then((res) => res.json())
             .then((data) => {
                 setMyCart(data);
@@ -48,7 +48,7 @@ const Cart = ({ cart }) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/myCarts/${id}`,{
+                fetch(`https://automotive-server-production.up.railway.app/myCarts/${id}`,{
                     method : "DELETE"
                 })
                 .then(res => res.json())

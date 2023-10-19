@@ -2,7 +2,7 @@ import { BiSolidCar } from 'react-icons/bi';
 
 const About = () => {
     return (
-        <div className="md:flex justify-between items-center my-16 px-4">
+        <div className="md:flex gap-5 justify-between items-center my-16 px-4">
             <div className="flex-1">
                 <img src="https://live.themewild.com/motex/assets/img/about/01.png" alt="" />
             </div>

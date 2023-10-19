@@ -11,7 +11,7 @@ import AOS from 'aos';
 const Home = () => {
     const [brands, setBrands] = useState([])
     useEffect(() => {
-        fetch('https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/allBrands')
+        fetch('https://automotive-server-production.up.railway.app/allBrands')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])
@@ -48,7 +48,7 @@ const Home = () => {
             </div>
             <Testimonial></Testimonial>
             <div data-aos="zoom-in" className="bg-blue-400 mx-4 md:mx-0 p-10 mt-16 md:flex gap-8 justify-between items-center rounded-md">
-                <div className="md:w-3/4 md:border-r-2 border-white">
+                <div className="md:w-3/4  md:border-r-2 border-white ">
                     <h2 className="md:text-3xl text-2xl font-bold">Get Your Dream Car It is Simple And Affordable</h2>
                     <p className="text-xl my-4">This powerful statement encapsulates the idea that achieving the dream of owning your ideal car is not only possible but also straightforward and budget-friendly. It appeals to individuals who aspire to own their dream cars without the process being complicated or financially burdensome.</p>
                 </div>

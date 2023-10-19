@@ -12,7 +12,7 @@ const AddProduct = () => {
         const description = form.description.value;
         const image = form.image.value;
         const cars = {name , brand , type , price , rating , description , image}
-        fetch('https://automotive-server-ol1p5cz1y-badhon-roys-projects.vercel.app/allCars',{
+        fetch('https://automotive-server-production.up.railway.app/allCars',{
             method : "POST",
             headers: {
                 'Content-Type': 'application/json'
