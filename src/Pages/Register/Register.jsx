@@ -25,11 +25,11 @@ const Register = () => {
             setErrorMassage("Password must have at least one Lowercase Character.");
             return;
         }
-        else if(! /^(?=.*[A-Z]).*$/.test(password)){
+        else if (! /^(?=.*[A-Z]).*$/.test(password)) {
             setErrorMassage("Password must have at least one Uppercase Character.")
             return;
         }
-        else if(! /^(?=.*[~`!@#$%^&*()--+={}[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
+        else if (! /^(?=.*[~`!@#$%^&*()--+={}[\]|\\:;"'<>,.?/_₹]).*$/.test(password)) {
             setErrorMassage("Password must contain at least one Special Symbol.")
             return;
         }
@@ -48,7 +48,7 @@ const Register = () => {
                     })
                 console.log(res.user);
                 navigate(location?.state ? location.state : '/')
-                swal("Good job", "Register successful", "success").then(()=>{
+                swal("Good job", "Register successful", "success").then(() => {
                     window.location.reload();
 
                 })
@@ -64,61 +64,66 @@ const Register = () => {
         setShowPassword(!showPassword)
     }
     return (
-        <div className="bg-blue-300 mt-2">
-            <div className="md:w-2/4 mx-auto py-20 px-4">
-                <div>
-                    <h1 className="text-5xl font-bold text-center mb-8">Register Here</h1>
+        <div className="bg-blue-300 mt-2 py-12 md:py-24">
+            <div>
+                <h1 className="md:text-5xl text-3xl font-bold text-center mb-8">Register Here</h1>
+            </div>
+            <div className="md:flex justify-between items-center">
+                <div className="md:block hidden">
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-sign-up-4489361-3723268.png" alt="" />
                 </div>
-                <div className="card shadow-2xl bg-base-100">
-                    <div className="card-body">
-                        <form onSubmit={handleRegister}>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="text-xl mt-2">Name</span>
-                                </label>
-                                <input type="text" name="name" placeholder="Your name" className="input input-bordered" required />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="text-xl mt-2">Image URL</span>
-                                </label>
-                                <input type="text" name="image" placeholder="image url" className="input input-bordered" />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="text-xl mt-2">Email</span>
-                                </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control ">
-                                <label className="label">
-                                    <span className="text-xl mt-2">Password</span>
-                                </label>
-                                <div className="relative">
-                                    <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="password" className="input input-bordered w-full" required />
-
-                                    <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
-                                        {
-                                            showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
-                                        }
-                                    </p>
+                <div className="md:w-2/4 mx-auto px-4">
+                    <div className="card shadow-2xl bg-base-100">
+                        <div className="card-body">
+                            <form onSubmit={handleRegister}>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="text-xl mt-2">Name</span>
+                                    </label>
+                                    <input type="text" name="name" placeholder="Your name" className="input input-bordered" required />
                                 </div>
 
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="text-xl mt-2">Image URL</span>
+                                    </label>
+                                    <input type="text" name="image" placeholder="image url" className="input input-bordered" />
+                                </div>
 
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control mt-6">
-                                <button className="btn bg-purple-500 hover:bg-purple-600 text-xl text-white">Register</button>
-                            </div>
-                        </form>
-                        {
-                            errorMassage && <p className="text-red-500">{errorMassage}</p>
-                        }
-                        <p>You have an account? <Link to="/login"> <span className="text-blue-600 font-bold cursor-pointer text-[18px]">Login</span></Link> </p>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="text-xl mt-2">Email</span>
+                                    </label>
+                                    <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="text-xl mt-2">Password</span>
+                                    </label>
+                                    <div className="relative">
+                                        <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="password" className="input input-bordered w-full" required />
+
+                                        <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
+                                            {
+                                                showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
+                                            }
+                                        </p>
+                                    </div>
+
+
+                                    <label className="label">
+                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    </label>
+                                </div>
+                                <div className="form-control mt-6">
+                                    <button className="btn bg-purple-500 hover:bg-purple-600 text-xl text-white">Register</button>
+                                </div>
+                            </form>
+                            {
+                                errorMassage && <p className="text-red-500">{errorMassage}</p>
+                            }
+                            <p>You have an account? <Link to="/login"> <span className="text-blue-600 font-bold cursor-pointer text-[18px]">Login</span></Link> </p>
+                        </div>
                     </div>
                 </div>
             </div>

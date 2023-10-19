@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaStar } from "react-icons/fa";
 
 const CarDetails = () => {
     const {user} =  useContext(AuthContext)
@@ -40,11 +41,24 @@ const CarDetails = () => {
     return (
         <div className="md:px-0 px-4">
             <img className="w-full md:h-[70vh] mt-2" src={image} alt="" />
-            <h2 className="text-4xl font-bold my-4">{name}</h2>
-            <p className="text-2xl">Brand : <span className="text-blue-500">{brand}</span></p>
+            <h2 className="md:text-4xl text-2xl font-bold my-4">{name}</h2>
+            <p className="md:text-2xl text-xl">Brand : <span className="text-blue-500">{brand}</span></p>
             <p className="text-xl">Type : {type}</p>
             <p className="text-xl">Price : ${price}</p>
-            <p> Rating : {rating}</p>
+            <div className="flex">
+                               
+                               {Array.from({ length: 5 }, (_, i) => {
+                                   const starValue = i + 1;
+                                   return (
+                                       <span
+                                           key={starValue}
+                                           className={`star ${starValue <= rating ? 'active' : ''}`}
+                                       >
+                                           <FaStar></FaStar>
+                                       </span>
+                                   );
+                               })}
+                           </div>
             <p className="text-[18px] my-4">{description}</p>
             <div className="flex justify-end">
                 <button onClick={()=>handleAddCart(_id)} className="btn bg-blue-500 text-white hover:bg-blue-700">Add to Cart</button>
