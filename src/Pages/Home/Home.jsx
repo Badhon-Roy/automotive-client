@@ -31,7 +31,7 @@ const Home = () => {
                 <div className="grid md:grid-cols-3 gap-5 mb-16 px-4">
                     {
                         brands.map(brand => <Link key={brand._id} to={`showCars/${brand?.brand}`}>
-                            <div data-aos="zoom-in" className="bg-base-100 shadow-2xl">
+                            <div data-aos="zoom-in" className="bg-blue-300 shadow-2xl">
                                 <figure><img className="w-full h-[250px]" src={brand.image} alt="" /></figure>
                                 <div className="card-body">
                                     <h2 className="md:text-2xl text-xl font-bold uppercase">{brand.brand}</h2>
