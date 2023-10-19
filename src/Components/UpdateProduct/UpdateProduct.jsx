@@ -17,7 +17,7 @@ const UpdateProduct = () => {
         const image = form.image.value;
         const cars = {name , brand , type , price , rating , description , image}
         console.log(cars);
-        fetch(`http://localhost:5000/allCars/${_id}`,{
+        fetch(`https://automotive-server-pi.vercel.app/allCars/${_id}`,{
             method : "PUT",
             headers: {
                 'Content-Type': 'application/json'

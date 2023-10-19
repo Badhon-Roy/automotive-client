@@ -11,7 +11,7 @@ const MainLayout = () => {
             <Navbar></Navbar>
             {
                 navigation.state === "loading" ? <LoadingPage></LoadingPage> :
-                    <div className="max-w-[1600px] mx-auto lg:px-16 md:px-8 px-4">
+                    <div className="max-w-[1600px] mx-auto lg:px-16 md:px-8">
                         <Outlet></Outlet>
                     </div>
             }

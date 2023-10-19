@@ -1,13 +1,18 @@
-
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const handleScrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      };
     return (
         <footer className="footer mt-8 footer-center p-10 bg-black text-white rounded">
             <nav className="grid grid-flow-col gap-4">
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <Link onClick={handleScrollToTop} to='/' className="link link-hover">Home</Link>
+                <Link onClick={handleScrollToTop} to='/addProduct' className="link link-hover">Add Product</Link>
+                <Link onClick={handleScrollToTop} to='/myCart' className="link link-hover">My Cart</Link>
             </nav>
             <nav>
                 <div className="grid grid-flow-col gap-4">

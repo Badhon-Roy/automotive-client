@@ -8,7 +8,7 @@ const ShowCars = () => {
     const [cars, setCars] = useState([])
     const { brand } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:5000/brands?brand=${encodeURIComponent(brand)}`)
+        fetch(`https://automotive-server-pi.vercel.app/brands?brand=${encodeURIComponent(brand)}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [brand])

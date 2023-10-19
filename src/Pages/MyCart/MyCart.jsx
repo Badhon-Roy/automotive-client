@@ -10,7 +10,7 @@ const MyCart = () => {
     const [myCarts, setMyCarts] = useState([])
     const email = user.email
     useEffect(() => {
-        fetch('http://localhost:5000/myCarts')
+        fetch('https://automotive-server-pi.vercel.app/myCarts')
             .then(res => res.json())
             .then(data => {
                 setMyCarts(data);

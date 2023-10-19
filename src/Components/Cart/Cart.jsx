@@ -9,7 +9,7 @@ const Cart = ({ cart }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allCars')
+        fetch('https://automotive-server-pi.vercel.app/allCars')
             .then((res) => res.json())
             .then((data) => {
                 setMyCart(data);
@@ -46,7 +46,7 @@ const Cart = ({ cart }) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myCarts/${id}`,{
+                fetch(`https://automotive-server-pi.vercel.app/myCarts/${id}`,{
                     method : "DELETE"
                 })
                 .then(res => res.json())

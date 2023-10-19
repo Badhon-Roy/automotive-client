@@ -7,10 +7,10 @@ import './testimonial.css';
 
 const Testimonial = () => {
     return (
-        <div className='mt-32 mb-8'>
-            <div>
+        <div className='mt-32 mb-8 md:px-0 px-4'>
+            <div data-aos="fade-right">
                     <p className='flex gap-2 items-center justify-center mx-auto text-xl text-blue-600'><BiSolidCar></BiSolidCar>Testimonials</p>
-                <h2 className='text-center text-4xl mb-8 font-bold'>What Our <span className='text-blue-600'>Client Says</span></h2>
+                <h2 className='text-center md:text-4xl text-2xl mb-8 font-bold'>What Our <span className='text-blue-600'>Client Says</span></h2>
             </div>
             <Swiper
                 spaceBetween={30}
