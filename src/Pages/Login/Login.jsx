@@ -85,7 +85,7 @@ const Login = () => {
                             {
                                 errorMassage && <p className="text-red-500">{errorMassage}</p>
                             }
-                            <button onClick={handleGoogleLogin} className="border-2 font-bold hover:bg-gray-100 w-[170px] text-xl flex items-center gap-3 p-1 rounded-lg">
+                            <button onClick={handleGoogleLogin} className="border-2 font-bold hover:bg-blue-300 w-[170px] text-xl flex items-center gap-3 p-1 rounded-lg">
                                 <img className="w-8" src="https://www.pngall.com/wp-content/uploads/13/Google-Logo-PNG-Image-180x180.png" alt="" />
                                 Google
                             </button>
