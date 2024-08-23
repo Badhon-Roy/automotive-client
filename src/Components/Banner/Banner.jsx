@@ -14,7 +14,7 @@ const Banner = () => {
             navigation
         >
             <SwiperSlide>
-                <div className="md:h-[80vh] h-[60vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://s3images.zee5.com/wp-content/uploads/2021/09/fastest-cars-world-2021-luxe-digital@2x.jpeg")' }}>
+                <div className="md:h-[80vh] h-[60vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://staticg.sportskeeda.com/editor/2023/09/bd29c-16945403266317-1920.jpg")' }}>
                     <div className=" bg-[rgba(0,0,0,0.4)] flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <h2 className="text-2xl md:text-4xl text-center lg:text-6xl font-bold mb-4 md:mb-8 text-white">
@@ -42,7 +42,7 @@ const Banner = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className="md:h-[80vh] h-[60vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://staticg.sportskeeda.com/editor/2023/09/bd29c-16945403266317-1920.jpg")' }}>
+                <div className="md:h-[80vh] h-[60vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://www.bmw.co.uk/content/bmw/marketGB/bmw_co_uk/en_GB/footer/experience-bmw/luxury-class/jcr:content/par/mosaicgallery/items/mosaicgalleryitem_2069872416/image/mobile.transform/mosaic963/image.1711372945132.jpg")' }}>
                     <div className="bg-[rgba(0,0,0,0.4)] flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <h2 className="text-2xl md:text-4xl text-center lg:text-6xl font-bold mb-4 md:mb-8 text-white">Your Journey, Your Drive</h2>
