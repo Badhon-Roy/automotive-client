@@ -10,13 +10,13 @@ const CarDetails = () => {
     const [cars, setCars] = useState({})
     const {_id , name, price, image , brand , type ,description, rating} = cars;
     useEffect(() => {
-        fetch(`https://automotive-server-production.up.railway.app/showCar/${id}`)
+        fetch(`https://automotive-server-pi.vercel.app/showCar/${id}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [id])
     const handleAddCart = id =>{
         const cartsData = {email:user.email , carId : id}
-        fetch(`https://automotive-server-production.up.railway.app/myCarts`,{
+        fetch(`https://automotive-server-pi.vercel.app/myCarts`,{
             method : "POST",
             headers : {
                 'Content-Type' : "application/json"

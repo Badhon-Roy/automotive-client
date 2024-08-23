@@ -8,7 +8,7 @@ const ShowCars = () => {
     const [cars, setCars] = useState([])
     const { brand } = useParams()
     useEffect(() => {
-        fetch(`https://automotive-server-production.up.railway.app/brands?brand=${encodeURIComponent(brand)}`)
+        fetch(`https://automotive-server-pi.vercel.app/brands?brand=${encodeURIComponent(brand)}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [brand])
@@ -19,7 +19,6 @@ const ShowCars = () => {
             <div>
                 <ProductAdvertisement></ProductAdvertisement>
             </div>
-
             <h3 className="text-4xl mt-16 mb-8 text-center my-6 font-bold">ToTal Cars : {cars.length}</h3>
             <div className="md:px-0 px-4">
                 {

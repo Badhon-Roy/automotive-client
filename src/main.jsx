@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://automotive-server-production.up.railway.app/showCar/${params.id}`)
+        loader: ({ params }) => fetch(`https://automotive-server-pi.vercel.app/showCar/${params.id}`)
       }
     ]
   },

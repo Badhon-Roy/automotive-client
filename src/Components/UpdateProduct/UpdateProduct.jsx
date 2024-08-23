@@ -4,8 +4,8 @@ import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
     const car = useLoaderData()
-    const {_id , name, price, image, brand, type, rating, description } = car;
-    const handleUpdateProduct = e =>{
+    const { _id, name, price, image, brand, type, rating, description } = car;
+    const handleUpdateProduct = e => {
         e.preventDefault()
         const form = e.target;
         const name = form.name.value;
@@ -15,29 +15,29 @@ const UpdateProduct = () => {
         const rating = form.rating.value;
         const description = form.description.value;
         const image = form.image.value;
-        const cars = {name , brand , type , price , rating , description , image}
+        const cars = { name, brand, type, price, rating, description, image }
         console.log(cars);
-        fetch(`https://automotive-server-production.up.railway.app/allCars/${_id}`,{
-            method : "PUT",
+        fetch(`https://automotive-server-pi.vercel.app/allCars/${_id}`, {
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body : JSON.stringify(cars)
+            body: JSON.stringify(cars)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-            if(data.modifiedCount>0){
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Update product successful',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                form.reset();
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Update product successful',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    form.reset();
+                }
+            })
     }
 
     return (
@@ -50,7 +50,7 @@ const UpdateProduct = () => {
                         <input type="text" name="name" className="w-full mt-2 py-1 px-4 rounded" placeholder="name" defaultValue={name} id="" />
                     </div>
                     <div className="flex-1">
-                    <label htmlFor="" className="text-xl">Brand :</label>
+                        <label htmlFor="" className="text-xl">Brand :</label>
                         <select name="brand" type="text" className="w-full mt-2 py-1 px-4 rounded" >
                             <option defaultValue={brand}>{brand}</option>
                             <option value="toyota">toyota</option>
@@ -86,7 +86,7 @@ const UpdateProduct = () => {
                     <label htmlFor="" className="text-xl">Image URL :</label>
                     <input type="text" name="image" className="w-full mt-2 py-1 px-4 rounded" placeholder="image" defaultValue={image} id="" />
                 </div>
-                <div className="flex justify-center"> 
+                <div className="flex justify-center">
                     <button className="btn text-white bg-purple-500 hover:bg-purple-600 my-5">
                         Update Product
                     </button>
