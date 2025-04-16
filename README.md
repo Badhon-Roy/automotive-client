@@ -52,14 +52,3 @@ Automotive is a car showcase web application where users can explore different b
 ### 🌐 Backend & Hosting
 - **Firebase Hosting** – Deployed on Firebase
 - **Firebase Authentication** – User management
-
----
-
-## 🚀 Getting Started
-
-To run the project locally, follow these steps:
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/automotive.git
-cd automotive
