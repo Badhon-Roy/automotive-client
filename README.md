@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co.com/6SMvyf0/Screenshot-12.jpg" alt="Automotive Banner" />
+  <img src="https://i.postimg.cc/rpmCrcMd/Screenshot-12.jpg" alt="Automotive Banner" />
 </p>
 
 
